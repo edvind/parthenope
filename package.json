@@ -1,0 +1,20 @@
+{
+  "name": "parthenope",
+  "version": "1.0.0",
+  "description": "11ty starter project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edvind/parthenope.git"
+  },
+  "keywords": ["11ty"],
+  "author": "Joel Bergroth",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/edvind/parthenope/issues"
+  },
+  "homepage": "https://github.com/edvind/parthenope#readme"
+}

@@ -1,2 +1,2 @@
-# parthenope
-11ty starter project
+# Parthenope
+Simple 11ty starter project
