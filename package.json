@@ -4,9 +4,17 @@
   "description": "11ty starter project",
   "main": "index.html",
   "scripts": {
-    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
-    "start": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve",
-    "test": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "build": "cross-env ELEVENTY_ENV=production run-s clean build:sass build:postcss build:eleventy",
+    "build:eleventy": "npx @11ty/eleventy",
+    "build:postcss": "npx postcss-cli src/_sass/main.scss -o dist/styles.css --no-map",
+    "build:sass": "npx sass --no-source-map --load-path=node_modules src/_sass/main.scss:dist/styles.css",
+    "clean": "del-cli dist",
+    "start": "cross-env ELEVENTY_ENV=development run-s build:sass build:postcss watch",
+    "test": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "watch": "run-p watch:*",
+    "watch:eleventy": "npx @11ty/eleventy --serve --incremental",
+    "watch:postcss": "onchange \"dist/styles.css\" -- npx postcss src/_sass/main.scss -o dist/styles.css",
+    "watch:sass": "npx sass --load-path=node_modules src/_sass/main.scss:dist/styles.css --watch"
   },
   "repository": {
     "type": "git",
@@ -23,8 +31,21 @@
   "homepage": "https://github.com/edvind/parthenope#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "autoprefixer": "^10.4.7",
+    "browserslist": "^4.20.4",
     "cross-env": "^7.0.3",
+    "cssnano": "^5.1.11",
+    "del-cli": "^4.0.1",
     "html-minifier": "^4.0.0",
-    "html-prettify": "^1.0.7"
-  }
+    "html-prettify": "^1.0.7",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-normalize": "^10.0.1",
+    "sass": "^1.52.3"
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
