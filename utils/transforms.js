@@ -1,7 +1,6 @@
 const
   htmlminifier = require('html-minifier'),
-  htmlprettify = require('html-prettify'),
-  prettier = require("prettier");
+  htmlprettify = require('html-prettify');
 
 module.exports = {
   prettify: function (content) {
