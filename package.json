@@ -4,17 +4,28 @@
   "description": "11ty starter project",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
+    "start": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "test": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edvind/parthenope.git"
   },
-  "keywords": ["11ty"],
+  "keywords": [
+    "11ty"
+  ],
   "author": "Joel Bergroth",
   "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/edvind/parthenope/issues"
   },
-  "homepage": "https://github.com/edvind/parthenope#readme"
+  "homepage": "https://github.com/edvind/parthenope#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "cross-env": "^7.0.3",
+    "html-minifier": "^4.0.0",
+    "html-prettify": "^1.0.7",
+    "prettier": "^2.7.1"
+  }
 }
