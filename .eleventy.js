@@ -14,22 +14,22 @@ module.exports = function(eleventyConfig) {
   // Collections
   Object.keys(collections).forEach((collectionName) => {
     eleventyConfig.addCollection(collectionName, collections[collectionName])
-  })
+  });
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName])
-  })
+  });
 
   // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
     eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
-  })
+  });
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
     eleventyConfig.addTransform(transformName, transforms[transformName])
-  })
+  });
 
   // Aliases
   eleventyConfig.addLayoutAlias('base', 'base.njk')
