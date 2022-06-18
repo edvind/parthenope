@@ -3,7 +3,12 @@ const
   transforms = require('./utils/transforms.js'),
   shortcodes = require('./utils/shortcodes.js');
 
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function(eleventyConfig) {
+
+  // PLugins
+  eleventyConfig.addPlugin(pluginRss);
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
