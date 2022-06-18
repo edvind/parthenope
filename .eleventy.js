@@ -32,7 +32,11 @@ module.exports = function(eleventyConfig) {
   });
 
   // Aliases
-  eleventyConfig.addLayoutAlias('base', 'base.njk')
+  eleventyConfig.addLayoutAlias('base', 'base.njk');
+
+  // Passthrough
+  eleventyConfig.addPassthroughCopy('src/site.webmanifest');
+  eleventyConfig.addPassthroughCopy({ "src/_assets/favicons": "." });
 
   // Browsersync https://browsersync.io/docs/options/
   eleventyConfig.setBrowserSyncConfig({

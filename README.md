@@ -7,6 +7,6 @@ Simple 11ty starter project
 - [ ] languages
 - [ ] sass scaffolding
 - [ ] robots.txt
-- [ ] favicon
+- [x] favicon
 - [ ] fonts
 - [ ] dark mode
