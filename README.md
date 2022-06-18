@@ -9,3 +9,4 @@ Simple 11ty starter project
 - [ ] robots.txt
 - [ ] favicon
 - [ ] fonts
+- [ ] dark mode
