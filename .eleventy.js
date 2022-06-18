@@ -1,4 +1,5 @@
 const
+  collections = require('./utils/collections.js'),
   filters = require('./utils/filters.js'),
   transforms = require('./utils/transforms.js'),
   shortcodes = require('./utils/shortcodes.js');
@@ -9,6 +10,11 @@ module.exports = function(eleventyConfig) {
 
   // PLugins
   eleventyConfig.addPlugin(pluginRss);
+
+  // Collections
+  Object.keys(collections).forEach((collectionName) => {
+    eleventyConfig.addCollection(collectionName, collections[collectionName])
+  })
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
