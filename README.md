@@ -6,7 +6,8 @@ Simple 11ty starter project
 - [ ] menu
 - [ ] languages
 - [ ] sass scaffolding
-- [ ] robots.txt
+- [x] robots.txt
+- [x] sitemap
 - [x] favicon
 - [ ] fonts
 - [ ] dark mode
