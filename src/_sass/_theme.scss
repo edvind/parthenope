@@ -1,0 +1,29 @@
+@use "variables" as *;
+
+:root {
+  --viewport-background: #{$viewport-background-color--light};
+  --font-color: #{$font-color--light};
+  --action-color: #{$action-color--light};
+  --action-color-hover: #{$action-color-hover--light};
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --viewport-background: #{$viewport-background-color--dark};
+    --font-color: #{$font-color--dark};
+    --action-color: #{$action-color--dark};
+    --action-color-hover: #{$action-color-hover--dark};
+  }
+}
+
+html {
+  color: var(--font-color);
+  background-color: var(--viewport-background);
+
+  a {
+    color: var(--action-color);
+    &:hover {
+      color: var(--action-color-hover);
+    }
+  }
+}
