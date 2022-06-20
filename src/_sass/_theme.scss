@@ -22,6 +22,7 @@ html {
 
   a {
     color: var(--action-color);
+    transition: color var(--duration) var(--timing);
     &:hover {
       color: var(--action-color-hover);
     }
