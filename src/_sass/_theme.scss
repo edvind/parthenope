@@ -7,7 +7,7 @@
   --action-color-hover: #{$action-color-hover--light};
 }
 
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme: dark) {
   :root {
     --viewport-background: #{$viewport-background-color--dark};
     --font-color: #{$font-color--dark};
