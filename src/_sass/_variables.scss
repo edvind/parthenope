@@ -11,6 +11,10 @@ $action-color-hover--dark: mix(rgb(255, 255, 255), #ab79b5, 20%);
 $viewport-background-color--dark: #202020;
 
 :root {
+  // Fonts
+  --font-family--base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family--heading: Georgia, serif;
+
   // Animations
   --duration: 0.2s;
   --timing: ease;

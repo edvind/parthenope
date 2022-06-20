@@ -1,2 +1,18 @@
 @use "variables" as *;
-// todo
+
+// Font sizes
+// Experimenting with https://fluidtypography.com/
+body {
+  font-size: clamp(0.875rem, 1.17vw + 0.572rem, 1.625rem);
+  line-height: clamp(1.313rem, 1.248vw + 0.99rem, 2.113rem);
+  font-family: var(--font-family--base);
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family--heading);
+}
+
+h1 {
+  margin-top: 0;
+}

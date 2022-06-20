@@ -5,9 +5,9 @@ Simple 11ty starter project named after [11 Parthenope](https://en.wikipedia.org
 - [ ] images
 - [ ] menu
 - [ ] languages
-- [ ] sass scaffolding
+- [x] sass scaffolding
 - [x] robots.txt
 - [x] sitemap
 - [x] favicon
-- [ ] fonts
-- [ ] dark mode
+- [x] fonts
+- [x] dark mode
