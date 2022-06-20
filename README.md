@@ -11,6 +11,7 @@ Simple 11ty starter project named after [11 Parthenope](https://en.wikipedia.org
 - [x] favicon
 - [x] fonts
 - [x] dark mode
+- [ ] skip to content
 
 ## Usage
 | Command | Description |
