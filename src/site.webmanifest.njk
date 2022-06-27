@@ -5,8 +5,8 @@ eleventyExcludeFromCollections: true
 {#- https://developer.mozilla.org/en-US/docs/Web/Manifest -#}
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "short_name": "{{ meta.title }}",
-  "name": "{{ meta.title }}",
+  "short_name": "{{ meta.languages[meta.language].title }}",
+  "name": "{{  meta.languages[meta.language].title }}",
   "description": "{{ meta.description }}",
   "start_url": "{{ build.url }}",
   "lang": "{{ meta.language }}",

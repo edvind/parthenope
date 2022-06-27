@@ -1,5 +1,13 @@
 {
-  "title": "Parthenope",
-  "description": "Simple 11ty starter project.",
-  "language": "en"
+  "language": "en",
+  "languages": {
+    "en": {
+      "title": "Parthenope",
+      "description": "Simple 11ty starter project."
+    },
+    "sv": {
+      "title": "Parthenope",
+      "description": "Enkelt startproject för 11ty."
+    }
+  }
 }

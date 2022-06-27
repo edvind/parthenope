@@ -4,7 +4,7 @@ Simple 11ty starter project named after [11 Parthenope](https://en.wikipedia.org
 ## Roadmap
 - [ ] images
 - [ ] menu
-- [ ] languages
+- [x] languages
 - [x] sass scaffolding
 - [x] robots.txt
 - [x] sitemap

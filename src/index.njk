@@ -1,19 +1,25 @@
 ---
-title: Start
 layout: base
+title: Redirecting to browser language
 ---
-<h1>{{ meta.title }}</h1>
-<p>{{ meta.description | replace(".", "") }} with an <a href="#">example link</a>.</p>
-
-<!-- Totally disposable backdrop. Styling: src/_sass/_layout.scss -->
-<div class="parthenope">
-<svg viewBox="0 0 512 512">
-  <circle style="stroke:currentColor;stroke-width:12.2492;stroke-dasharray:none;stroke-opacity:1" cx="172.112" cy="324.108" fill="none" r="101.478"/>
-  <circle style="stroke:currentColor;stroke-width:13.7952;stroke-dasharray:none;stroke-opacity:1" cx="216.726" cy="345.866" r="28.634" fill="none"/>
-  <circle style="stroke:currentColor;stroke-width:10.3464;stroke-dasharray:none;stroke-opacity:1" cx="117.826" cy="300.365" r="12.248" fill="none"/>
-  <circle style="stroke:currentColor;stroke-width:13.7952;stroke-dasharray:none;stroke-opacity:1" cx="174.859" cy="286.657" r="16.436" fill="none"/>
-  <circle style="stroke:currentColor;stroke-width:13.7952;stroke-dasharray:none;stroke-opacity:1" cx="139.325" cy="368.852" r="16.347" fill="none"/>
-  <path style="stroke:currentColor;stroke-width:13.7952;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="M410.365 85.907 268.633 227.64"/>
-  <path style="stroke:currentColor;stroke-width:13.7952;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" d="m399.332 157.95-32.635 32.635M350.825 205.629l-58.899 58.898M231.113 203.503l36.966-36.965M282.286 151.323l49.163-49.164M305.64 312.957l59.786-59.787M177.336 194.51l78.756-78.756"/>
-</svg>
-</div>
+<script>
+var availableLanguages = [
+  {%- for language, item in meta.languages -%}
+    "{{ language }}"
+    {%- if not loop.last %},{% endif -%}
+  {%- endfor -%}
+];
+var locale =
+  [
+    ...(window.navigator.languages || []),
+    window.navigator.language,
+    window.navigator.browserLanguage,
+    window.navigator.userLanguage,
+    window.navigator.systemLanguage
+  ]
+  .filter(Boolean)
+  .map(language => language.substr(0, 2))
+  .find(language => availableLanguages.includes(language)) || "{{ meta.language }}";
+let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
+window.location.replace(redirUrl);
+</script>
