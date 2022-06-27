@@ -1,0 +1,9 @@
+---
+permalink: .htaccess
+eleventyExcludeFromCollections: true
+---
+RewriteEngine On
+{%- for language, item in meta.languages %}
+RewriteCond %{HTTP:Accept-Language} ^{{ language }} [NC]
+RewriteRule ^$ {{ build.url }}/{{ language }}/ [L,R=301]
+{%- endfor %}
