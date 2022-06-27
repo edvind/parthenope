@@ -1,0 +1,4 @@
+{
+  "permalink": "/{{ locale }}/posts/{{ page.fileSlug }}/",
+  "layout": "base"
+}
