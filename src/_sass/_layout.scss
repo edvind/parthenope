@@ -15,7 +15,7 @@ html {
 
 // Totally disposable
 main {
-  margin: 1em;
+  padding: var(--spacing);
 }
 
 .parthenope {
@@ -24,7 +24,7 @@ main {
   height: 100vh;
   top: 0;
   left: 0;
-  opacity: 0.01;
+  opacity: 0.1;
   overflow: hidden;
   display: flex;
   justify-content: center;
