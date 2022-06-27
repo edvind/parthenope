@@ -13,6 +13,7 @@ Simple 11ty starter project named after [11 Parthenope](https://en.wikipedia.org
 - [x] dark mode
 - [x] skip to content
 - [x] focus outline
+- [x] webmanifest
 
 ## Usage
 | Command | Description |

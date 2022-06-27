@@ -1,0 +1,20 @@
+---
+permalink: site.webmanifest
+eleventyExcludeFromCollections: true
+---
+{#- https://developer.mozilla.org/en-US/docs/Web/Manifest -#}
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "short_name": "{{ meta.title }}",
+  "name": "{{ meta.title }}",
+  "description": "{{ meta.description }}",
+  "start_url": "{{ build.url }}",
+  "lang": "{{ meta.language }}",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any" },
+    { "src": "/icon-512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}
