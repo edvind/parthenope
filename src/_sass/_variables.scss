@@ -19,8 +19,13 @@ $viewport-background-color--dark: #202020;
   --duration: 0.2s;
   --timing: ease;
 
-  //Spacings
+  // Spacings
   --spacing: 1em;
   --spacing--small: .75em;
   --spacing--smaller: .5em;
+
+  // Outline
+  --outline-style: solid;
+  --outline-color: var(--action-color);
+  --outline-width: .2em;
 }

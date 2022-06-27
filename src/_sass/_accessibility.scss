@@ -9,5 +9,6 @@
   transition: transform var(--duration) var(--timing);
   &:focus {
     transform: translate(-50%, 0%);
+    outline-offset: calc( var(--outline-width) * -1 );
   }
 }

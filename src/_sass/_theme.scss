@@ -23,6 +23,9 @@ html {
   a {
     color: var(--action-color);
     transition: color var(--duration) var(--timing);
+    &:focus {
+      outline: var(--outline-width) var(--outline-style) var(--outline-color);
+    }
     &:hover {
       color: var(--action-color-hover);
     }
