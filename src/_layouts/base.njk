@@ -12,7 +12,9 @@
     <link rel="manifest" href="/site.webmanifest">
   </head>
   <body>
-    <a class="skip-to-content" href="#main">Skip to content</a>
+    <a class="skip-to-content" href="#main">
+      {{- meta.languages[locale].skip -}}
+    </a>
     <main id="main">
       {{ content | safe }}
     </main>

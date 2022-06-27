@@ -5,13 +5,15 @@
       "label": "engelska",
       "title": "Parthenope",
       "description": "Simple 11ty starter project.",
-      "selection": "Language selection"
+      "selection": "Language selection",
+      "skip": "Skip to content"
     },
     "sv": {
       "label": "svenska",
       "title": "Parthenope",
       "description": "Enkelt startproject för 11ty.",
-      "selection": "Språkväljare"
+      "selection": "Språkväljare",
+      "skip": "Hoppa till innehåll"
     }
   }
 }
