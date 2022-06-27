@@ -1,6 +1,9 @@
 ---
 layout: base
-title: Language selection
+changefreq: never
+eleventyComputed:
+  locale: "{{ meta.language }}"
+  title: "{{ meta.languages[locale].selection }}"
 ---
 <script>
 var availableLanguages = [
@@ -23,7 +26,7 @@ var locale =
 let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
 window.location.replace(redirUrl);
 </script>
-{% for language, item in meta.languages -%}
+{%- for language, item in meta.languages -%}
   {% if loop.first %}<ul>{% endif %}
     <li>
       <a href="{{ language | url | absoluteUrl( build.url ) }}">
@@ -31,4 +34,4 @@ window.location.replace(redirUrl);
       </a>
     </li>
   {% if loop.last %}</ul>{% endif %}
-{% endfor %}
+{%- endfor %}

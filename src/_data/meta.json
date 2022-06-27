@@ -4,12 +4,14 @@
     "en": {
       "label": "engelska",
       "title": "Parthenope",
-      "description": "Simple 11ty starter project."
+      "description": "Simple 11ty starter project.",
+      "selection": "Language selection"
     },
     "sv": {
       "label": "svenska",
       "title": "Parthenope",
-      "description": "Enkelt startproject för 11ty."
+      "description": "Enkelt startproject för 11ty.",
+      "selection": "Språkväljare"
     }
   }
 }
