@@ -1,8 +1,15 @@
 module.exports = {
-  posts_en: function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/en/posts/*.md");
-  },
-  posts_sv: function (collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/sv/posts/*.md");
+  posts: function (collectionApi) {
+    const data = {};
+    const meta = collectionApi.getAll()[0].data.meta;
+    for (language in meta.languages) {
+      const posts = collectionApi.getFilteredByGlob("./src/" + language + "/posts/*.md");
+      for (const post of posts) {
+        const langpost = data[language] || [];
+        langpost.push( post );
+        data[language] = langpost;
+      }
+    }
+    return data;
   }
 }
