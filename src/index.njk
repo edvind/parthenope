@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Redirecting to browser language
+title: Language selection
 ---
 <script>
 var availableLanguages = [
@@ -23,3 +23,12 @@ var locale =
 let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
 window.location.replace(redirUrl);
 </script>
+{% for language, item in meta.languages -%}
+  {% if loop.first %}<ul>{% endif %}
+    <li>
+      <a href="{{ language | url | absoluteUrl( build.url ) }}">
+        {{- item.label | capitalize -}}
+      </a>
+    </li>
+  {% if loop.last %}</ul>{% endif %}
+{% endfor %}

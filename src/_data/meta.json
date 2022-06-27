@@ -2,10 +2,12 @@
   "language": "en",
   "languages": {
     "en": {
+      "label": "engelska",
       "title": "Parthenope",
       "description": "Simple 11ty starter project."
     },
     "sv": {
+      "label": "svenska",
       "title": "Parthenope",
       "description": "Enkelt startproject för 11ty."
     }
