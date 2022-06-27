@@ -13,6 +13,21 @@ html {
   box-sizing: inherit;
 }
 
+header {
+  nav {
+    right: 0;
+    padding: var(--spacing--smaller) var(--spacing);
+    position: absolute;
+    ul {
+      margin: 0;
+      display: inline;
+      li {
+        display: inline;
+      }
+    }
+  }
+}
+
 // Totally disposable
 main {
   padding: var(--spacing);

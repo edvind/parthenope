@@ -2,17 +2,17 @@
   "language": "en",
   "languages": {
     "en": {
-      "label": "engelska",
+      "label": "english",
       "title": "Parthenope",
       "description": "Simple 11ty starter project.",
-      "selection": "Language selection",
+      "language": "Language",
       "skip": "Skip to content"
     },
     "sv": {
       "label": "svenska",
       "title": "Parthenope",
       "description": "Enkelt startproject för 11ty.",
-      "selection": "Språkväljare",
+      "language": "Språk",
       "skip": "Hoppa till innehåll"
     }
   }
