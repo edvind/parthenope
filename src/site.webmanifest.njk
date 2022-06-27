@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "short_name": "{{ meta.languages[meta.language].title }}",
   "name": "{{  meta.languages[meta.language].title }}",
-  "description": "{{ meta.description }}",
+  "description": "{{ meta.languages[meta.language].description }}",
   "start_url": "{{ build.url }}",
   "lang": "{{ meta.language }}",
   "background_color": "#ffffff",
