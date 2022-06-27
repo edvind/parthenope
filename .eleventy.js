@@ -31,9 +31,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addTransform(transformName, transforms[transformName])
   });
 
-  // Aliases
-  eleventyConfig.addLayoutAlias('base', 'base.njk');
-
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "src/_assets/favicons": "." });
 
