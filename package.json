@@ -31,6 +31,7 @@
   "homepage": "https://github.com/edvind/parthenope#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "autoprefixer": "^10.4.7",
     "browserslist": "^4.20.4",

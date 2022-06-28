@@ -5,6 +5,7 @@
       "label": "english",
       "title": "Parthenope",
       "description": "Simple 11ty starter project.",
+      "mainmenu": "Main Menu",
       "language": "Language",
       "skip": "Skip to content"
     },
@@ -12,6 +13,7 @@
       "label": "svenska",
       "title": "Parthenope",
       "description": "Enkelt startproject för 11ty.",
+      "mainmenu": "Huvudmeny",
       "language": "Språk",
       "skip": "Hoppa till innehåll"
     }

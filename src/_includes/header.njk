@@ -1,0 +1,45 @@
+<header>
+  <a class="skip-to-content" href="#main">
+    {{- meta.languages[locale].skip -}}
+  </a>
+  <nav aria-label="{{ meta.languages[locale].mainmenu }}">
+    {%- set navigation = locale + "Frontpage" %}
+    {{
+      collections.all |
+      eleventyNavigation( navigation ) |
+      eleventyNavigationToHtml({
+        activeAnchorClass: "current",
+        activeKey: eleventyNavigation.key,
+        useAriaCurrentAttr: true
+      }) |
+      safe
+    }}
+    {# Note: useAriaCurrentAttr not yet implemented. #}
+    {# https://github.com/11ty/eleventy-navigation/pull/43 #}
+  </nav>
+  <nav aria-label="{{ meta.languages[locale].language }}">
+    <ul>
+    {%- for language, item in meta.languages %}
+      {%- set translatedUrl = "/" + language + "/" %}
+      {%- set activeClass = "current" if language == locale else "" %}
+
+      {%- for item in collections.all %}
+        {%- if item.data.key == key and item.data.locale == language %}
+          {%- set translatedUrl = item.url %}
+        {%- endif %}
+      {%- endfor %}
+
+      <li>
+        <a
+          href="{{ translatedUrl }}"
+          {%- if activeClass %}
+            class="{{ activeClass }}"
+            aria-current="true"
+          {% endif %}>
+          {{- language | upper -}}
+        </a>
+      </li>
+    {%- endfor %}
+    </ul>
+  </nav>
+</header>
