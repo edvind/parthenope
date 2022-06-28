@@ -6,9 +6,13 @@
 // absoluteUrl 
 // htmlToAbsoluteUrls
 
+const { DateTime } = require("luxon");
+
 module.exports = {
-  // Example filter
-  filter: function (str) {
-    return str;
+  date: function (date, locale) {
+    return DateTime
+    .fromObject(date)
+    .setLocale(locale)
+    .toLocaleString(DateTime.DATE_MED);
   }
 }
