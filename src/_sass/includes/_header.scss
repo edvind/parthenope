@@ -1,0 +1,27 @@
+header {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: var(--spacing);
+    line-height: 1;
+    .menu {
+      nav {
+        ul {
+          margin: 0;
+          li {
+            display: inline;
+          }
+        }
+      }
+    }
+    .site-title {
+      justify-self: left;
+    }
+    .main-menu {
+      justify-self: center;
+    }
+    .helper-menu {
+      justify-self: right;
+    }
+  }
+}
