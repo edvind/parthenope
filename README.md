@@ -15,9 +15,6 @@ Simple 11ty starter project named after [11 Parthenope](https://en.wikipedia.org
 - [x] focus outline
 - [x] webmanifest
 
-## Remember
-- [ ] Remove comment from ./src/_includes/header.njk when [pr](https://github.com/11ty/eleventy-navigation/pull/43) is merged.
-
 ## Usage
 | Command | Description |
 | :--- | :--- |

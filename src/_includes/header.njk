@@ -8,19 +8,23 @@
     </div>
     <div class="menu main-menu">
       <nav aria-label="{{ meta.languages[locale].mainmenu }}">
+        <ul>
         {%- set navigation = locale + "Frontpage" %}
-        {{
-          collections.all |
-          eleventyNavigation( navigation ) |
-          eleventyNavigationToHtml({
-            activeAnchorClass: "current",
-            activeKey: eleventyNavigation.key,
-            useAriaCurrentAttr: true
-          }) |
-          safe
-        }}
-        {# Note: useAriaCurrentAttr not yet implemented. #}
-        {# https://github.com/11ty/eleventy-navigation/pull/43 #}
+        {%- set mainMenu = collections.all | eleventyNavigation(navigation) %}
+        {%- for entry in mainMenu %}
+          {%- set menuEntryClass = '' %}
+          {%- if entry.url == page.url %}
+            {%- set menuEntryClass = ' class="current" aria-current="page"' %}
+          {%- elif eleventyNavigation.parent == entry.key %}
+            {%- set menuEntryClass = ' class="parent"' %}
+          {%- endif %}
+          <li{{ menuEntryClass | safe }}>
+            <a href="{{ entry.url | url }}">
+              {{- entry.eleventyNavigation.title or entry.title -}}
+            </a>
+          </li>
+        {%- endfor %}
+        </ul>
       </nav>
     </div>
     <div class="menu helper-menu">
