@@ -1,8 +1,8 @@
 const
   collections = require('./utils/collections.js'),
   filters = require('./utils/filters.js'),
-  transforms = require('./utils/transforms.js'),
-  shortcodes = require('./utils/shortcodes.js');
+  shortcodes = require('./utils/shortcodes.js'),
+  transforms = require('./utils/transforms.js');
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
