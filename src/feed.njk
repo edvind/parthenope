@@ -13,7 +13,7 @@ eleventyExcludeFromCollections: true
   <author>
     <name>{{ meta.languages[meta.language].title }}</name>
   </author>
-  {%- for post in collections.all %}
+  {%- for post in collections.posts[meta.language] %}
   {%- set absolutePostUrl %}
     {{- post.url | url | absoluteUrl(build.url) }}
   {%- endset %}
