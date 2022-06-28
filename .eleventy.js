@@ -4,12 +4,15 @@ const
   shortcodes = require('./utils/shortcodes.js'),
   transforms = require('./utils/transforms.js');
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const
+  eleventyNavigation = require("@11ty/eleventy-navigation"),
+  eleventyRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
 
-  // PLugins
-  eleventyConfig.addPlugin(pluginRss);
+  // Plugins
+  eleventyConfig.addPlugin(eleventyNavigation);
+  eleventyConfig.addPlugin(eleventyRss);
 
   // Collections
   Object.keys(collections).forEach((collectionName) => {
