@@ -1,13 +1,13 @@
 // Light theme
 $font-color--light: #322e3c;
 $action-color--light: #9d65a7;
-$action-color-hover--light: mix(rgb(0, 0, 0), #9d65a7, 10%);
+$action-color-hover--light: mix(rgb(0, 0, 0), $action-color--light, 10%);
 $viewport-background-color--light: #ffffff;
 
 // Dark theme
 $font-color--dark: #e1dee2;
 $action-color--dark: #ab79b5;
-$action-color-hover--dark: mix(rgb(255, 255, 255), #ab79b5, 20%);
+$action-color-hover--dark: mix(rgb(255, 255, 255), $action-color--dark, 20%);
 $viewport-background-color--dark: #202020;
 
 :root {
