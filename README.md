@@ -2,7 +2,7 @@
 Simple 11ty starter project named after [11 Parthenope](https://en.wikipedia.org/wiki/11_Parthenope).
 
 ## Roadmap
-- [ ] images
+- [x] images
 - [x] menu
 - [x] languages
 - [x] sass scaffolding
