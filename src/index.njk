@@ -5,26 +5,33 @@ eleventyComputed:
   locale: "{{ meta.language }}"
   title: "{{ meta.languages[locale].language }}"
 ---
+{% set js %}
+  var availableLanguages = [
+    {%- for language, item in meta.languages -%}
+      "{{ language }}"
+      {%- if not loop.last %},{% endif -%}
+    {%- endfor -%}
+  ];
+  var locale =
+    [
+      ...(window.navigator.languages || []),
+      window.navigator.language,
+      window.navigator.browserLanguage,
+      window.navigator.userLanguage,
+      window.navigator.systemLanguage
+    ]
+    .filter(Boolean)
+    .map(language => language.substr(0, 2))
+    .find(language => availableLanguages.includes(language)) || "{{ meta.language }}";
+  let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
+  window.location.replace(redirUrl);
+{% endset %}
 <script>
-var availableLanguages = [
-  {%- for language, item in meta.languages -%}
-    "{{ language }}"
-    {%- if not loop.last %},{% endif -%}
-  {%- endfor -%}
-];
-var locale =
-  [
-    ...(window.navigator.languages || []),
-    window.navigator.language,
-    window.navigator.browserLanguage,
-    window.navigator.userLanguage,
-    window.navigator.systemLanguage
-  ]
-  .filter(Boolean)
-  .map(language => language.substr(0, 2))
-  .find(language => availableLanguages.includes(language)) || "{{ meta.language }}";
-let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
-window.location.replace(redirUrl);
+{%- if build.env == 'production' %}
+  {{- js | jsMinify | safe }}
+{%- else %}
+  {{ js | safe }}
+{%- endif %}
 </script>
 {%- for language, item in meta.languages -%}
   {% if loop.first %}<ul>{% endif %}

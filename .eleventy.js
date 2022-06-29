@@ -1,6 +1,7 @@
 const
   collections = require('./utils/collections.js'),
   filters = require('./utils/filters.js'),
+  filtersAsync = require('./utils/filters-async.js'),
   shortcodes = require('./utils/shortcodes.js'),
   transforms = require('./utils/transforms.js');
 
@@ -22,6 +23,11 @@ module.exports = function(eleventyConfig) {
   // Filters
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName])
+  });
+
+  // Filters (Asynchronous)
+  Object.keys(filtersAsync).forEach((filterAsyncName) => {
+    eleventyConfig.addNunjucksAsyncFilter(filterAsyncName, filtersAsync[filterAsyncName])
   });
 
   // Shortcodes
