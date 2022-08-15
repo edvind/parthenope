@@ -43,8 +43,9 @@ module.exports = function(eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "src/_assets/favicons": "." });
 
-  // Browsersync https://browsersync.io/docs/options/
-  eleventyConfig.setBrowserSyncConfig({
+  // Swap 11ty dev server to browsersync
+  eleventyConfig.setServerOptions({
+    module: "@11ty/eleventy-server-browsersync",
     files: './dist/styles.css',
     ui: { port: 3001 },
     ghostMode: true

@@ -30,10 +30,11 @@
   },
   "homepage": "https://github.com/edvind/parthenope#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy": "^2.0.0-canary.14",
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-navigation": "^0.3.4",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-server-browsersync": "^1.0.2",
     "autoprefixer": "^10.4.8",
     "browserslist": "^4.21.3",
     "cross-env": "^7.0.3",
