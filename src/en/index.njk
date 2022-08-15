@@ -1,9 +1,8 @@
 ---
 layout: frontpage.njk
 title: Start
-key: frontpage
 eleventyNavigation:
   title: Start
 ---
-<h1>{{ meta.languages[locale].title }}</h1>
-<p>{{ meta.languages[locale].description | replace(".", "") }} with an <a href="/en/posts/">example link</a>.</p>
+<h1>{{ languages[lang].title }}</h1>
+<p>{{ languages[lang].description | replace(".", "") }} with an <a href="/en/posts/">example link</a>.</p>

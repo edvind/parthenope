@@ -6,12 +6,20 @@ const
   transforms = require('./utils/transforms.js');
 
 const
+  eleventyI18n = require("@11ty/eleventy").EleventyI18nPlugin,
   eleventyNavigation = require("@11ty/eleventy-navigation"),
   eleventyRss = require("@11ty/eleventy-plugin-rss");
 
+const dotenv = require('dotenv').config();
+
 module.exports = function(eleventyConfig) {
 
+  let defaultLanguage = process.env.DEFAULT_LANG || "en";
+
   // Plugins
+  eleventyConfig.addPlugin(eleventyI18n, {
+    defaultLanguage: defaultLanguage,
+  });
   eleventyConfig.addPlugin(eleventyNavigation);
   eleventyConfig.addPlugin(eleventyRss);
 

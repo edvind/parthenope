@@ -4,16 +4,16 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ meta.languages[meta.language].title }}</title>
-  <subtitle>{{ meta.description }}</subtitle>
+  <title>{{ languages[build.lang].title }}</title>
+  <subtitle>{{ languages[build.lang].description }}</subtitle>
   <link href="{{ build.url }}/feed.xml" rel="self"/>
   <link href="{{ build.url }}/"/>
   <updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ build.url }}/</id>
   <author>
-    <name>{{ meta.languages[meta.language].title }}</name>
+    <name>{{ languages[build.lang].title }}</name>
   </author>
-  {%- for post in collections.posts[meta.language] %}
+  {%- for post in collections.posts[build.lang] %}
   {%- set absolutePostUrl %}
     {{- post.url | url | absoluteUrl(build.url) }}
   {%- endset %}

@@ -5,11 +5,11 @@ eleventyExcludeFromCollections: true
 {#- https://developer.mozilla.org/en-US/docs/Web/Manifest -#}
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "short_name": "{{ meta.languages[meta.language].title }}",
-  "name": "{{  meta.languages[meta.language].title }}",
-  "description": "{{ meta.languages[meta.language].description }}",
+  "short_name": "{{ languages[build.lang].title }}",
+  "name": "{{  languages[build.lang].title }}",
+  "description": "{{ languages[build.lang].description }}",
   "start_url": "{{ build.url }}",
-  "lang": "{{ meta.language }}",
+  "lang": "{{ build.lang }}",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "icons": [

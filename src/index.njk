@@ -2,12 +2,12 @@
 layout: base.njk
 changefreq: never
 eleventyComputed:
-  locale: "{{ meta.language }}"
-  title: "{{ meta.languages[locale].language }}"
+  lang: "{{ build.lang }}"
+  title: "{{ languages[lang].language }}"
 ---
 {% set js %}
   var availableLanguages = [
-    {%- for language, item in meta.languages -%}
+    {%- for language, item in languages -%}
       "{{ language }}"
       {%- if not loop.last %},{% endif -%}
     {%- endfor -%}
@@ -22,7 +22,7 @@ eleventyComputed:
     ]
     .filter(Boolean)
     .map(language => language.substr(0, 2))
-    .find(language => availableLanguages.includes(language)) || "{{ meta.language }}";
+    .find(language => availableLanguages.includes(language)) || "{{ build.lang }}";
   let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
   window.location.replace(redirUrl);
 {% endset %}
@@ -33,7 +33,7 @@ eleventyComputed:
   {{ js | safe }}
 {%- endif %}
 </script>
-{%- for language, item in meta.languages -%}
+{%- for language, item in languages -%}
   {% if loop.first %}<ul>{% endif %}
     <li>
       <a href="{{ language | url | absoluteUrl( build.url ) }}">

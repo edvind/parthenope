@@ -1,4 +1,4 @@
 {
   "layout": "posts/post.njk",
-  "permalink": "/{{ locale }}/inlagg/{{ page.fileSlug }}/"
+  "permalink": "{{ lang }}/inlagg/{{ title | slugify }}/"
 }

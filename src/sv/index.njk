@@ -1,9 +1,8 @@
 ---
 layout: frontpage.njk
 title: Förstasida
-key: frontpage
 eleventyNavigation:
   title: Förstasida
 ---
-<h1>{{ meta.languages[locale].title }}</h1>
-<p>{{ meta.languages[locale].description | replace(".", "") }} med en <a href="/sv/inlagg/">exempellänk</a>.</p>
+<h1>{{ languages[lang].title }}</h1>
+<p>{{ languages[lang].description | replace(".", "") }} med en <a href="/sv/inlagg/">exempellänk</a>.</p>

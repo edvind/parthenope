@@ -3,9 +3,11 @@ permalink: sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- for item in collections.all %}
-  {%- if item.data.locale == meta.language %}
+  {%- if item.data.lang == build.lang %}
   <url>
     <loc>{{ item.url | url | absoluteUrl(build.url) }}</loc>
     <lastmod>{{ item.date | dateToRfc3339 }}</lastmod>
@@ -16,10 +18,8 @@ eleventyExcludeFromCollections: true
         monthly
       {%- endif -%}
     </changefreq>
-    {%- for link in collections.all %}
-    {%- if link.data.key == item.data.key %}
-    <xhtml:link rel="alternate" hreflang="{{ link.data.locale }}" href="{{ link.url | url | absoluteUrl(build.url) }}"/>
-    {%- endif %}
+    {%- for link in item.url | locale_links %}
+    <xhtml:link rel="alternate" hreflang="{{ link.lang }}" href="{{ link.url | url | absoluteUrl(build.url) }}"/>
     {%- endfor %}
   </url>
   {%- endif %}

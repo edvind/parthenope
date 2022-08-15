@@ -3,7 +3,7 @@ permalink: .htaccess
 eleventyExcludeFromCollections: true
 ---
 RewriteEngine On
-{%- for language, item in meta.languages %}
+{%- for language, item in languages %}
 RewriteCond %{HTTP:Accept-Language} ^{{ language }} [NC]
 RewriteRule ^$ {{ build.url }}/{{ language }}/ [L,R=302]
 {%- endfor %}

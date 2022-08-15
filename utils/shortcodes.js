@@ -1,6 +1,6 @@
-require('dotenv').config();
-
-const Image = require("@11ty/eleventy-img");
+const
+  dotenv = require('dotenv').config(),
+  Image = require("@11ty/eleventy-img");
 
 module.exports = {
   image: async function (src, alt, sizes = "100vw" ) {
