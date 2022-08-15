@@ -17,9 +17,7 @@ module.exports = function(eleventyConfig) {
   let defaultLanguage = process.env.DEFAULT_LANG || "en";
 
   // Plugins
-  eleventyConfig.addPlugin(eleventyI18n, {
-    defaultLanguage: defaultLanguage,
-  });
+  eleventyConfig.addPlugin(eleventyI18n, { defaultLanguage: defaultLanguage });
   eleventyConfig.addPlugin(eleventyNavigation);
   eleventyConfig.addPlugin(eleventyRss);
 
