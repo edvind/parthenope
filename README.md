@@ -10,7 +10,7 @@ Simple 11ty starter project named after [11 Parthenope](https://en.wikipedia.org
 - [x] sitemap
 - [x] favicon
 - [x] fonts
-- [x] dark mode
+- [x] dark mode + switch
 - [x] skip to content
 - [x] focus outline
 - [x] webmanifest

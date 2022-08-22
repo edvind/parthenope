@@ -49,6 +49,9 @@ module.exports = function(eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "src/_assets/favicons": "." });
 
+  // Watch Targets
+  eleventyConfig.addWatchTarget("./src/_scripts/");
+
   // Swap 11ty dev server to browsersync
   eleventyConfig.setServerOptions({
     module: "@11ty/eleventy-server-browsersync",

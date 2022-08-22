@@ -22,6 +22,17 @@ header {
     }
     .helper-menu {
       justify-self: right;
+      nav {
+        display: inline-block;
+      }
+      #theme-switch {
+        display: inline-block;
+      }
     }
   }
+}
+
+// Hide switch if no javascript
+.no-js header .container .helper-menu #theme-switch {
+  display: none;
 }

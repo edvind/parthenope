@@ -1,18 +1,31 @@
 @use "variables" as *;
 
-:root {
+@mixin light {
   --viewport-background: #{$viewport-background-color--light};
   --font-color: #{$font-color--light};
   --action-color: #{$action-color--light};
   --action-color-hover: #{$action-color-hover--light};
 }
+@mixin dark {
+  --viewport-background: #{$viewport-background-color--dark};
+  --font-color: #{$font-color--dark};
+  --action-color: #{$action-color--dark};
+  --action-color-hover: #{$action-color-hover--dark};
+}
+
+:root {
+  @include light;
+}
+[data-theme="dark"] {
+  @include dark;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --viewport-background: #{$viewport-background-color--dark};
-    --font-color: #{$font-color--dark};
-    --action-color: #{$action-color--dark};
-    --action-color-hover: #{$action-color-hover--dark};
+    @include dark;
+  }
+  [data-theme="light"] {
+    @include light;
   }
 }
 

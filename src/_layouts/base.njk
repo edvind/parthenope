@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang }}" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,32 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script>
+      {%- set jsHead %}
+        {%- include "src/_scripts/detectJavaScript.js" %}
+        {%- include "src/_scripts/detectColorScheme.js" %}
+      {%- endset %}
+      {%- if build.env == 'production' %}
+        {{- jsHead | jsMinify | safe }}
+      {%- else %}
+        {{- jsHead | safe }}
+      {%- endif %}
+    </script>
   </head>
   <body>
     {% include 'header.njk' %}
     <main id="main">
       {{ content | safe }}
     </main>
+    <script>
+      {%- set jsMain %}
+        {%- include "src/_scripts/switchTheme.js" %}
+      {%- endset %}
+      {%- if build.env == 'production' %}
+        {{- jsMain | jsMinify | safe }}
+      {%- else %}
+        {{- jsMain | safe }}
+      {%- endif %}
+    </script>
   </body>
 </html>
