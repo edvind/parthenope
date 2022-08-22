@@ -2,8 +2,7 @@
 layout: base.njk
 changefreq: never
 eleventyComputed:
-  lang: "{{ build.lang }}"
-  title: "{{ languages[lang].language }}"
+  title: "{{ languages[page.lang].language }}"
 ---
 {% set js %}
   var availableLanguages = [
@@ -22,7 +21,7 @@ eleventyComputed:
     ]
     .filter(Boolean)
     .map(language => language.substr(0, 2))
-    .find(language => availableLanguages.includes(language)) || "{{ build.lang }}";
+    .find(language => availableLanguages.includes(language)) || "{{ page.lang }}";
   let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
   window.location.replace(redirUrl);
 {% endset %}

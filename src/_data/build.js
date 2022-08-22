@@ -14,7 +14,6 @@ function buildUrl( env ) {
 
 module.exports = {
   env: process.env.ELEVENTY_ENV,
-  lang: process.env.DEFAULT_LANG || "en",
   timestamp: new Date(),
   url: buildUrl( process.env.ELEVENTY_ENV )
 }

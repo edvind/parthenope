@@ -1,15 +1,15 @@
 <header>
   <a class="skip-to-content" href="#main">
-    {{- languages[lang].skip -}}
+    {{- languages[page.lang].skip -}}
   </a>
   <div class="container">
     <div class="site-title">
-      <a href="{{ "/" | locale_url }}">{{ languages[lang].title }}</a>
+      <a href="{{ "/" | locale_url }}">{{ languages[page.lang].title }}</a>
     </div>
     <div class="menu main-menu">
-      <nav aria-label="{{ languages[lang].mainmenu }}">
+      <nav aria-label="{{ languages[page.lang].mainmenu }}">
         <ul>
-        {%- set navigation = lang + "Frontpage" %}
+        {%- set navigation = page.lang + "Frontpage" %}
         {%- set mainMenu = collections.all | eleventyNavigation(navigation) %}
         {%- for entry in mainMenu %}
           {%- set menuEntryClass = '' %}
@@ -28,7 +28,7 @@
       </nav>
     </div>
     <div class="menu helper-menu">
-      <nav aria-label="{{ languages[lang].language }}">
+      <nav aria-label="{{ languages[page.lang].language }}">
         <ul>
         {% for link in page.url | locale_links %}
           <li>
