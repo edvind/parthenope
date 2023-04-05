@@ -7,3 +7,4 @@ RewriteEngine On
 RewriteCond %{HTTP:Accept-Language} ^{{ language }} [NC]
 RewriteRule ^$ {{ build.url }}/{{ language }}/ [L,R=302]
 {%- endfor %}
+ErrorDocument 404 /404.html

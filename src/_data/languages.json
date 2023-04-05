@@ -5,7 +5,9 @@
     "description": "Simple 11ty starter project.",
     "mainmenu": "Main Menu",
     "language": "Language",
-    "skip": "Skip to content"
+    "skip": "Skip to content",
+    "404_title": "404",
+    "404_description": "Page not found."
   },
   "sv": {
     "label": "svenska",
@@ -13,6 +15,8 @@
     "description": "Enkelt startproject för 11ty.",
     "mainmenu": "Huvudmeny",
     "language": "Språk",
-    "skip": "Hoppa till innehåll"
+    "skip": "Hoppa till innehåll",
+    "404_title": "404",
+    "404_description": "Sidan kunde inte hittas."
   }
 }

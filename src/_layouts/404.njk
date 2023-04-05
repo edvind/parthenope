@@ -1,0 +1,8 @@
+---
+layout: base.njk
+eleventyComputed:
+  title: "{{ languages[page.lang].404_title }}"
+---
+<h1>{{ languages[page.lang].404_title }}</h1>
+<p>{{ languages[page.lang].404_description }}</p>
+{{ content | safe }}
