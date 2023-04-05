@@ -54,10 +54,9 @@ module.exports = function(eleventyConfig) {
 
   // Swap 11ty dev server to browsersync
   eleventyConfig.setServerOptions({
-    module: "@11ty/eleventy-server-browsersync",
-    files: './dist/styles.css',
-    ui: { port: 3001 },
-    ghostMode: true
+    liveReload: true,
+    domDiff: true,
+    watch: ["dist/styles.css"]
   });
 
   // Defaults
