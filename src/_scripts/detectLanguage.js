@@ -11,3 +11,4 @@ var locale =
 .find(language => availableLanguages.includes(language)) || "{{ page.lang }}";
 let redirUrl = "{{ '/' | url | absoluteUrl( build.url ) }}" + locale + "/";
 window.location.replace(redirUrl);
+// This is prone to guess wrong. Better to redirect by Accept-Language header value server side.

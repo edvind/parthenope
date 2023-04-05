@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- for item in collections.all %}
-  {%- if item.data.lang == page.lang %}
+  {%- if item.page.lang == build.defaultLanguage %}
   <url>
     <loc>{{ item.url | url | absoluteUrl(build.url) }}</loc>
     <lastmod>{{ item.date | dateToRfc3339 }}</lastmod>
