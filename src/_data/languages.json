@@ -6,6 +6,7 @@
     "mainmenu": "Main Menu",
     "language": "Language",
     "skip": "Skip to content",
+    "theme": "Switch theme",
     "404_title": "404",
     "404_description": "Page not found."
   },
@@ -16,6 +17,7 @@
     "mainmenu": "Huvudmeny",
     "language": "Språk",
     "skip": "Hoppa till innehåll",
+    "theme": "Växla tema",
     "404_title": "404",
     "404_description": "Sidan kunde inte hittas."
   }
